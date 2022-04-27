@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import MLKit
+import MLImage
 
 public func uiImageToPixelBuffer(image: UIImage, size: Int) -> CVPixelBuffer? {
   let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary

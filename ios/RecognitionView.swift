@@ -8,8 +8,9 @@
 import UIKit
 import AVFoundation
 import CoreVideo
-import MLKit
 import TensorFlowLite
+import MLKitFaceDetection
+import MLKitVision
 
 class RecognitionView: UIView {  
   // NOTE: Camera

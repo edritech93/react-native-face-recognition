@@ -5,7 +5,6 @@ import Accelerate
 import AVFoundation
 import CoreMedia
 import CoreVideo
-import MLKit
 
 /// Information about a model file or labels file.
 typealias FileInfo = (name: String, extension: String)

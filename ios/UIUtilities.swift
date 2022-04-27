@@ -1,7 +1,7 @@
 import AVFoundation
 import CoreVideo
-import MLKit
 import UIKit
+import MLKitVision
 
 /// Defines UI-related utilitiy methods for vision detection.
 public class UIUtilities {
