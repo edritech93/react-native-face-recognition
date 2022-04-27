@@ -25,10 +25,11 @@
 		D48F1B3128192B480088DC0A /* FaceRecognitionViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceRecognitionViewManager.m; sourceTree = "<group>"; };
 		D48F1B3228192B480088DC0A /* MLKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
 		D48F1B3328192B480088DC0A /* ModelFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFace.swift; sourceTree = "<group>"; };
-		D48F1B3428192B480088DC0A /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
 		D48F1B3528192B480088DC0A /* RecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionView.swift; sourceTree = "<group>"; };
 		D48F1B3628192B480088DC0A /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		D48F1B3728192B480088DC0A /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		D48F1B38281933CA0088DC0A /* labelmap.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
+		D48F1B39281933CA0088DC0A /* mobile_face_net.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobile_face_net.tflite; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* FaceRecognition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceRecognition-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,11 +55,12 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				D48F1B38281933CA0088DC0A /* labelmap.txt */,
+				D48F1B39281933CA0088DC0A /* mobile_face_net.tflite */,
 				D48F1B3628192B480088DC0A /* Convert.swift */,
 				D48F1B3128192B480088DC0A /* FaceRecognitionViewManager.m */,
 				D48F1B2F28192B480088DC0A /* FaceRecognitionViewManager.swift */,
 				D48F1B3228192B480088DC0A /* MLKitExtensions.swift */,
-				D48F1B3428192B480088DC0A /* model */,
 				D48F1B3728192B480088DC0A /* ModelDataHandler.swift */,
 				D48F1B3328192B480088DC0A /* ModelFace.swift */,
 				D48F1B3528192B480088DC0A /* RecognitionView.swift */,
