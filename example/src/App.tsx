@@ -6,7 +6,7 @@ import { FaceRecognitionView } from 'react-native-face-recognition';
 export default function App() {
   return (
     <View style={styles.container}>
-      <FaceRecognitionViewManager color="#32a852" style={styles.box} />
+      <FaceRecognitionView color="#32a852" style={styles.box} />
     </View>
   );
 }
