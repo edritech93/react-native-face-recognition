@@ -12,7 +12,9 @@ const LINKING_ERROR =
   '- You are not using Expo managed workflow\n';
 
 type FaceRecognitionProps = {
-  color: string;
+  onGetRect: Function;
+  onGetData: Function,
+  onGetCapture: Function,
   style: ViewStyle;
 };
 
