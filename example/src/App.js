@@ -98,6 +98,7 @@ export default function App(props) {
 
   return (
     <View style={styles.container}>
+      <Text>Test</Text>
       <FaceRecognitionView
         style={styles.wrapCamera}
         sample={faceDownload}
@@ -141,6 +142,7 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 0,
+    backgroundColor: 'blue'
   },
   wrapCamera: {
     flex: 1,
