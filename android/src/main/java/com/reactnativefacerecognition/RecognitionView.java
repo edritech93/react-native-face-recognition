@@ -84,10 +84,10 @@
          try {
              FaceDetectorOptions options =
                      new FaceDetectorOptions.Builder()
-                             .setClassificationMode(FaceDetectorOptions.CLASSIFICATION_MODE_ALL)
-                             .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
-                             .setContourMode(FaceDetectorOptions.CONTOUR_MODE_NONE)
-                             .enableTracking()
+                            .setClassificationMode(FaceDetectorOptions.CLASSIFICATION_MODE_ALL)
+                            .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
+                            .setContourMode(FaceDetectorOptions.CONTOUR_MODE_NONE)
+                            .enableTracking()
                              .build();
              faceDetector = FaceDetection.getClient(options);
          } catch (Exception e) {
