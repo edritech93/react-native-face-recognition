@@ -21,7 +21,7 @@ def safeExtGet(prop, fallback) {
 android {
     compileSdkVersion safeExtGet('FaceRecognition_compileSdkVersion', 29)
     defaultConfig {
-        minSdkVersion safeExtGet('FaceRecognition_minSdkVersion', 16)
+        minSdkVersion safeExtGet('FaceRecognition_minSdkVersion', 21)
         targetSdkVersion safeExtGet('FaceRecognition_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
@@ -56,4 +56,11 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
+    implementation 'com.google.mlkit:face-detection:16.1.2'
+    implementation 'org.tensorflow:tensorflow-lite:2.4.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.4.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation "com.google.zxing:core:3.3.3"
+    api 'com.otaliastudios:cameraview:2.7.2'
 }

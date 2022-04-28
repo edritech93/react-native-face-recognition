@@ -102,7 +102,12 @@ export default function App(props) {
         style={styles.wrapCamera}
         sample={faceDownload}
         capture={isCapture}
-        onGetRect={({nativeEvent}) => setFace(nativeEvent)}
+        onGetRect={({nativeEvent}) => {
+          console.log('------------------------------------');
+          console.log('onGetRect => ', nativeEvent);
+          console.log('------------------------------------');
+          setFace(nativeEvent)
+        }}
         onGetData={_onGetData}
         onGetCapture={_onGetCapture}
       />
@@ -140,7 +145,7 @@ export default function App(props) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 0,
+    flex:1,
   },
   wrapCamera: {
     flex: 1,
