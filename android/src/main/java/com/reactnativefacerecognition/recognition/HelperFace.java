@@ -1,9 +1,13 @@
 package com.reactnativefacerecognition.recognition;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Base64;
 
 import androidx.annotation.NonNull;
@@ -46,26 +50,26 @@ public class HelperFace {
     Uri resultUri;
 
     // TODO: need check and fix Android > 10 issue save image
-    // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-    //     ContentResolver resolver = context.getContentResolver();
-    //     ContentValues contentValues = new ContentValues();
-    //     contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, name);
-    //     contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png");
-    //     contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + File.separator + FOLDER_NAME);
-    //     Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
-    //     fos = resolver.openOutputStream(imageUri);
-    //     resultUri = imageUri;
-    // } else {
-    String imagesDir = Environment.getExternalStoragePublicDirectory(
-      Environment.DIRECTORY_DCIM).toString() + File.separator + FOLDER_NAME;
-    File file = new File(imagesDir);
-    if (!file.exists()) {
-      file.mkdir();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      ContentResolver resolver = context.getContentResolver();
+      ContentValues contentValues = new ContentValues();
+      contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, name);
+      contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png");
+      contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + File.separator + FOLDER_NAME);
+      Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+      fos = resolver.openOutputStream(imageUri);
+      resultUri = imageUri;
+    } else {
+      String imagesDir = Environment.getExternalStoragePublicDirectory(
+        Environment.DIRECTORY_DCIM).toString() + File.separator + FOLDER_NAME;
+      File file = new File(imagesDir);
+      if (!file.exists()) {
+        file.mkdir();
+      }
+      File image = new File(imagesDir, name + ".png");
+      fos = new FileOutputStream(image);
+      resultUri = Uri.fromFile(image);
     }
-    File image = new File(imagesDir, name + ".png");
-    fos = new FileOutputStream(image);
-    resultUri = Uri.fromFile(image);
-    // }
     bitmap.compress(Bitmap.CompressFormat.PNG, 50, fos);
     fos.flush();
     fos.close();
